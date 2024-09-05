@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teekay Enterprise</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images//teekay-logo.jpg" alt="Teekay Enterprise Logo">
+            </div>
+            <ul class="menu">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Introductory Section -->
+    <section class="intro">
+        <div class="slideshow-container">
+
+            <!-- Slide 1 -->
+            <div class="mySlides fade">
+                <img src="images//pipesAI2.jpg" class="intro-image" alt="Metal Pipes">
+                <div class="text">
+                    <h2>Leading Metal Pipes Suppliers and Stockists in the Industry</h2>
+                    <p>We are dedicated to supplying high-quality metal pipes that meet the needs of industries worldwide. Our products are known for their reliability, durability, and exceptional performance.</p>
+                    <div class="button-container">
+                        <a href="#about" class="btn">Know More</a>
+                        <a href="#contact" class="btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="mySlides fade">
+                <img src="images//pipesAI.jpg" class="intro-image" alt="High-Quality Pipes">
+                <div class="text">
+                    <h2>Ensuring the Highest Standards of Quality and Reliability</h2>
+                    <p>Our commitment to quality ensures that every pipe we supply is of the highest standard, providing unmatched reliability and safety for your projects.</p>
+                    <div class="button-container">
+                        <a href="#about" class="btn">Know More</a>
+                        <a href="#contact" class="btn">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <h2>Our Products</h2>
+        <div class="products-container">
+
+            <!-- Product Card 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/pipes-image2.jpg" alt="Pipes & Tubes">
+                    <div class="product-overlay">
+                        <h3>Pipes & Tubes</h3>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <h4>Pipes & Tubes</h4>
+                    <p>We offer a wide range of pipes and tubes suitable for various industrial applications.</p>
+                </div>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/pipes-image3.jpg" alt="Round Bar / Rods">
+                    <div class="product-overlay">
+                        <h3>Round Bar / Rods</h3>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <h4>Round Bar / Rods</h4>
+                    <p>We offer the highest quality round bars and rods for precision engineering and construction.</p>
+                </div>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/sqaure-pipes.png" alt="Sheets, Plates, Coils">
+                    <div class="product-overlay">
+                        <h3>Sheets, Plates, Coils</h3>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <h4>Sheets, Plates, Coils</h4>
+                    <p>Our sheets, plates, and coils are available in various specifications and grades.</p>
+                </div>
+            </div>
+
+            <!-- Product Card 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/ms-seamless-pipe.jpg" alt="Flanges">
+                    <div class="product-overlay">
+                        <h3>Flanges</h3>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <h4>Flanges</h4>
+                    <p>High-quality flanges designed for durability and reliability in high-pressure environments.</p>
+                </div>
+            </div>
+
+            <!-- Product Card 5 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="images/hydraulic-pipes.png" alt="Fittings">
+                    <div class="product-overlay">
+                        <h3>Fittings</h3>
+                    </div>
+                </div>
+                <div class="product-description">
+                    <h4>Fittings</h4>
+                    <p>We provide a complete range of fittings to meet the diverse needs of industries.</p>
+                </div>
+            </div>
+
+        </div>
+        <button class="slide-btn prev">❮</button>
+        <button class="slide-btn next">❯</button>
+    </section>
+
+    <!-- Company Headline Section -->
+    <section class="company-headline">
+        <div class="headline-container">
+            <div class="headline-text">
+                <h1>YOUR TRUSTED SUPPLIER OF HIGH-GRADE METAL PIPES AND FITTINGS</h1>
+                <a href="#contact" class="btn">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Other sections like About Us and Contact Us can go here -->
+    <section id="about">
+        <!-- About Us Content -->
+    </section>
+
+    <section id="contact">
+        <!-- Contact Us Content -->
+    </section>
+
+    <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        slides[slideIndex-1].style.display = "block";  
+        setTimeout(showSlides, 5000); // Change image every 5 seconds
+    }
+
+    const container = document.querySelector('.products-container');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+    let scrollAmount = 0;
+
+    nextBtn.addEventListener('click', () => {
+        container.scrollBy({
+            top: 0,
+            left: container.offsetWidth,
+            behavior: 'smooth'
+        });
+        scrollAmount += container.offsetWidth;
+        if (scrollAmount >= container.scrollWidth - container.offsetWidth) {
+            scrollAmount = 0;
+            setTimeout(() => {
+                container.scrollTo({ left: 0, behavior: 'smooth' });
+            }, 600);
+        }
+    });
+
+    prevBtn.addEventListener('click', () => {
+        container.scrollBy({
+            top: 0,
+            left: -container.offsetWidth,
+            behavior: 'smooth'
+        });
+        scrollAmount -= container.offsetWidth;
+        if (scrollAmount < 0) {
+            scrollAmount = container.scrollWidth - container.offsetWidth;
+            setTimeout(() => {
+                container.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+            }, 600);
+        }
+    });
+    </script>
+</body>
+</html>
